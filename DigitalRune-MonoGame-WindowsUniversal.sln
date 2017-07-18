@@ -89,7 +89,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpInteropSample", "Samples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples-MonoGame-WindowsUniversal", "Samples\Samples\Platforms\MonoGame-WindowsUniversal\Samples-MonoGame-WindowsUniversal.csproj", "{8C23C251-D25D-4327-B2FB-75F548F792A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.WindowsUniversal", "Source\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsUAP.csproj", "{79DD2306-7A83-412A-A9C5-FE5660334DD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.WindowsUniversal", "Source\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsUniversal.csproj", "{79DD2306-7A83-412A-A9C5-FE5660334DD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
