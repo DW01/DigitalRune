@@ -362,11 +362,13 @@ namespace DigitalRune.Game.Input
         _areGamePadsHandled[i] = isHandled;
 
       // Update input devices.
+#if !SILVERLIGHT
+      UpdateTouch(deltaTime);
+#endif
       UpdateKeyboard(deltaTime);
       UpdateMouse(deltaTime);
 #if !SILVERLIGHT
       UpdateGamePads(deltaTime);
-      UpdateTouch(deltaTime);
 #if !MONOGAME
       UpdateAccelerometer();
 #endif

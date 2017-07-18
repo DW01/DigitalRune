@@ -98,10 +98,6 @@
       <Project>{5A0E3C60-1CA9-49D5-84CA-308CB8E3A3B4}</Project>
       <Name>DigitalRune</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.PCL.csproj">
-      <Project>{ffccde91-500e-47ef-8342-5ca5c85a67fe}</Project>
-      <Name>MonoGame.Framework.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

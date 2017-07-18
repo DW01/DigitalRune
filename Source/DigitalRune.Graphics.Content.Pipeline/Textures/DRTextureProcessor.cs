@@ -517,7 +517,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
       {
         case TargetPlatform.Windows:
         case TargetPlatform.DesktopGL:
-        case TargetPlatform.WindowsPhone:
         case TargetPlatform.WindowsPhone8:
         case TargetPlatform.WindowsStoreApp:
         case TargetPlatform.MacOSX:

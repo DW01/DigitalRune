@@ -10,10 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DigitalRune.Graphics</RootNamespace>
     <AssemblyName>DigitalRune.Graphics</AssemblyName>
-    <TargetFrameworkVersion Condition=" '$(OS)' == 'Windows_NT' ">v4.0</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition=" '$(OS)' == 'Unix' ">v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile Condition=" '$(OS)' == 'Windows_NT' ">Profile328</TargetFrameworkProfile>
-    <TargetFrameworkProfile Condition=" '$(OS)' == 'Unix' ">Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -23,8 +21,7 @@
     <Optimize>false</Optimize>
     <BaseIntermediateOutputPath>obj\.NETPortable\Debug\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">bin\.NETPortable\Debug\</OutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Unix' ">bin\.NETPortable_iOS\Debug\</OutputPath>
+    <OutputPath>bin\.NETPortable\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;PORTABLE;MONOGAME;ANIMATION;PARTICLES</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,8 +34,7 @@
     <Optimize>true</Optimize>
     <BaseIntermediateOutputPath>obj\.NETPortable\Release\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">bin\.NETPortable\Release\</OutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Unix' ">bin\.NETPortable_iOS\Release\</OutputPath>
+    <OutputPath>bin\.NETPortable\Release\</OutputPath>
     <DefineConstants>TRACE;PORTABLE;MONOGAME;ANIMATION;PARTICLES</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -57,6 +53,11 @@
       <UserProperties ProjectLinkReference="9508e261-5ac5-4eb7-97f9-bc4ff6717708" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\MonoGame\MonoGame.Framework\bin\Portable\AnyCPU\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DigitalRune.Animation\DigitalRune.Animation%28PCL%29.csproj">
       <Project>{FCA3D67B-A19A-4398-A126-171E5E1217F1}</Project>
@@ -77,10 +78,6 @@
     <ProjectReference Include="..\DigitalRune\DigitalRune%28PCL%29.csproj">
       <Project>{05D82E85-901A-42CE-8D0A-DAF8B7F0168B}</Project>
       <Name>DigitalRune(PCL)</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.PCL.csproj">
-      <Project>{FFCCDE91-500E-47EF-8342-5CA5C85A67FE}</Project>
-      <Name>MonoGame.Framework.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
