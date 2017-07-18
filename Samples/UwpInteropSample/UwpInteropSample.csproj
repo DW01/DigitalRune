@@ -154,7 +154,7 @@
       <Project>{86ad1576-a1fd-4b7e-ac9d-83d118967c81}</Project>
       <Name>DigitalRune%28UWP%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Source\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsUAP.csproj">
+    <ProjectReference Include="..\..\Source\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsUniversal.csproj">
       <Project>{79dd2306-7a83-412a-a9c5-fe5660334dd3}</Project>
       <Name>MonoGame.Framework.WindowsUniversal</Name>
     </ProjectReference>
