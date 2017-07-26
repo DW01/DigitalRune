@@ -243,7 +243,7 @@ namespace DigitalRune.Animation.Tests.Animations.NBlendAnimation
 
       blendGroup.SetWeight(0, 10);
       blendGroup.SetWeight(1, 1);
-      Assert.AreEqual(new TimeSpan((long)((1.0f * 10.0f / 11.0f + 2.0f * 1.0f / 11.0f) * TimeSpan.TicksPerSecond)), blendGroup.GetTotalDuration());
+      Assert.AreEqual(new TimeSpan((long)((1.0f * 10.0f / 11.0f + 2.0f * 1.0f / 11.0f) * TimeSpan.TicksPerSecond)).Ticks, blendGroup.GetTotalDuration().Ticks, 1);
       manager.Update(TimeSpan.FromSeconds(0.5));       // t = 1.5
       manager.ApplyAnimations();
       Assert.AreEqual(123.45f, property1.Value);
@@ -291,7 +291,7 @@ namespace DigitalRune.Animation.Tests.Animations.NBlendAnimation
 
       blendGroup.SetWeight(0, 10);
       blendGroup.SetWeight(1, 1);
-      Assert.AreEqual(new TimeSpan((long)((1.0f * 10.0f / 11.0f + 2.0f * 1.0f / 11.0f) * TimeSpan.TicksPerSecond)), blendGroup.GetTotalDuration());
+      Assert.AreEqual(new TimeSpan((long)((1.0f * 10.0f / 11.0f + 2.0f * 1.0f / 11.0f) * TimeSpan.TicksPerSecond)).Ticks, blendGroup.GetTotalDuration().Ticks, 1);
       manager.Update(TimeSpan.FromSeconds(0.5));       // t = 1.5
       manager.ApplyAnimations();
       Assert.AreEqual(AnimationState.Filling, controller.State);
