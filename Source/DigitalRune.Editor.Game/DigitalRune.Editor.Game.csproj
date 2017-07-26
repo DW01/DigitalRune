@@ -60,6 +60,9 @@
     <Reference Include="SharpDX.Direct2D1">
       <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.Direct2D1.dll</HintPath>
     </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.DXGI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -182,6 +185,32 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\MonoGame\ThirdParty\Dependencies\assimp\Assimp64.dll">
+      <Link>Assimp64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\MonoGame\ThirdParty\Dependencies\assimp\AssimpNet.dll">
+      <Link>AssimpNet.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Class Diagrams\Editor.Colors.cd" />
+    <None Include="Class Diagrams\Editor.Game.cd" />
+    <None Include="Class Diagrams\Editor.Models.cd" />
+    <None Include="Class Diagrams\Editor.Shader.cd" />
+    <None Include="Class Diagrams\Editor.Textures.cd" />
+    <Compile Include="Colors\ColorExtension.cs" />
+    <Page Include="Colors\ColorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Colors\ColorView.xaml.cs">
+      <DependentUpon>ColorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Colors\ColorViewModel.cs" />
+    <Page Include="Colors\ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="..\DigitalRune.Graphics\Content\DataFormat.cs">
       <Link>Content\DataFormat.cs</Link>
     </Compile>
@@ -242,66 +271,118 @@
     <Compile Include="..\DigitalRune.Graphics\Content\XnaHelper.cs">
       <Link>Content\XnaHelper.cs</Link>
     </Compile>
-    <Compile Include="Game\ContentPipeline\GameModelProcessor.cs" />
-    <Compile Include="Game\ContentPipeline\GameContentBuilder.cs" />
+    <CodeAnalysisDictionary Include="..\DigitalRune\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+    <None Include="..\MonoGame\ThirdParty\Dependencies\FreeImage.NET\Windows\FreeImage.dll">
+      <Link>FreeImage.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="Game\ContentPipeline\GameContentBuildLogger.cs" />
-    <Compile Include="Game\Graphics\DebugGraphicsScreen.cs" />
+    <Compile Include="Game\ContentPipeline\GameContentBuilder.cs" />
+    <Compile Include="Game\ContentPipeline\GameModelProcessor.cs" />
     <Compile Include="Game\GameExtension.cs" />
     <Compile Include="Game\GameHelper.cs" />
-    <Compile Include="Game\GraphicsDeviceManager.cs" />
+    <Compile Include="Game\GamePresentationTarget.cs" />
+    <Page Include="Game\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Game\GameView.xaml.cs">
       <DependentUpon>GameView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Game\GameViewModel.cs" />
+    <Compile Include="Game\GraphicsDeviceManager.cs" />
+    <Compile Include="Game\Graphics\BasicGraphicsScreen.cs" />
+    <Compile Include="Game\Graphics\DebugGraphicsScreen.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\CustomSceneQuery.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\DeferredGraphicsDebugMode.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\DeferredGraphicsScreen.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\GBufferRenderer.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\LightBufferRenderer.cs" />
     <Compile Include="Game\Graphics\DeferredGraphicsScreen\PreprocessingSceneQuery.cs" />
-    <Compile Include="Game\Inspector\Vector2Editor.xaml.cs">
-      <DependentUpon>Vector2Editor.xaml</DependentUpon>
-    </Compile>
+    <Page Include="Game\Inspector\PoseEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="Game\Inspector\PoseEditor.xaml.cs">
       <DependentUpon>PoseEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Game\Inspector\Vector4Editor.xaml.cs">
-      <DependentUpon>Vector4Editor.xaml</DependentUpon>
+    <Page Include="Game\Inspector\Vector2Editor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Game\Inspector\Vector2Editor.xaml.cs">
+      <DependentUpon>Vector2Editor.xaml</DependentUpon>
     </Compile>
+    <Page Include="Game\Inspector\Vector3Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Game\Inspector\Vector3Editor.xaml.cs">
       <DependentUpon>Vector3Editor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Game\Interactivity\KeyboardNavigationBehavior.cs" />
-    <Compile Include="Game\Interactivity\MouseLookBehavior.cs" />
-    <Compile Include="Game\Interactivity\TurntableBehavior.cs" />
+    <Page Include="Game\Inspector\Vector4Editor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Game\Inspector\Vector4Editor.xaml.cs">
+      <DependentUpon>Vector4Editor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Game\Interactivity\ArcballBehavior.cs" />
     <Compile Include="Game\Interactivity\CameraFieldOfViewBehavior.cs" />
+    <Compile Include="Game\Interactivity\KeyboardNavigationBehavior.cs" />
+    <Compile Include="Game\Interactivity\MouseLookBehavior.cs" />
     <Compile Include="Game\Interactivity\MouseZoomBehavior.cs" />
+    <Compile Include="Game\Interactivity\TurntableBehavior.cs" />
     <Compile Include="Game\MonoGameService.cs" />
+    <Page Include="Game\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="Game\TriangleGraphicsScreen.cs" />
-    <Compile Include="Game\GamePresentationTarget.cs" />
     <Compile Include="Game\XnaColorValueConverter.cs" />
     <Compile Include="Models\AnimationPropertyViewModel.cs" />
     <Compile Include="Models\CameraMode.cs" />
     <Compile Include="Models\GraphicsEngine.cs" />
-    <Compile Include="Models\ModelDocumentState.cs" />
-    <Compile Include="Models\ModelDocument_Inspector.cs" />
-    <Compile Include="Models\ModelDocument_Validation.cs" />
-    <Compile Include="Models\ModelDocument_Outliner.cs" />
     <Compile Include="Models\ModelDocument.cs" />
     <Compile Include="Models\ModelDocumentFactory.cs" />
+    <Compile Include="Models\ModelDocumentState.cs" />
+    <Page Include="Models\ModelDocumentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="Models\ModelDocumentView.xaml.cs">
       <DependentUpon>ModelDocumentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelDocumentViewModel.cs" />
-    <Compile Include="Game\Graphics\BasicGraphicsScreen.cs" />
+    <Compile Include="Models\ModelDocument_Inspector.cs" />
+    <Compile Include="Models\ModelDocument_Outliner.cs" />
+    <Compile Include="Models\ModelDocument_Validation.cs" />
     <Compile Include="Models\ModelsExtension.cs" />
+    <Page Include="Models\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="..\MonoGame\ThirdParty\Dependencies\PVRTexLibNET\PVRTexLibNET.dll">
+      <Link>PVRTexLibNET.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\MonoGame\ThirdParty\Dependencies\PVRTexLibNET\Windows\x64\PVRTexLibWrapper.dll">
+      <Link>PVRTexLibWrapper.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\AssemblyInfo.template" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Shader\ShaderExtension_Nvidia.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <Compile Include="Shader\IntelliSense\CgIntelliSense.cs" />
     <Compile Include="Shader\IntelliSense\CompletionData\ConstantCompletionData.cs" />
     <Compile Include="Shader\IntelliSense\CompletionData\FunctionCompletionData.cs" />
@@ -317,123 +398,52 @@
     <Compile Include="Shader\IntelliSense\ShaderIntelliSense_Interaction.cs" />
     <Compile Include="Shader\IntelliSense\ShaderParser.cs" />
     <Compile Include="Shader\IntelliSense\ShaderRegion.cs" />
+    <Page Include="Shader\Options\ShaderOptionsPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Shader\Options\ShaderOptionsPageView.xaml.cs">
       <DependentUpon>ShaderOptionsPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shader\Options\ShaderOptionsPageViewModel.cs" />
+    <Page Include="Shader\ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Shader\ShaderDocumentFactory.cs" />
+    <Compile Include="Shader\ShaderExtension.cs" />
     <Compile Include="Shader\ShaderExtension_FXC.cs" />
     <Compile Include="Shader\ShaderExtension_MonoGame.cs" />
+    <Compile Include="Shader\ShaderExtension_Nvidia.cs" />
     <Compile Include="Shader\ShaderExtension_XNA.cs" />
-    <Compile Include="Shader\ShaderExtension.cs" />
     <Compile Include="Shader\Tools\BuildLogger.cs" />
     <Compile Include="Shader\Tools\Fxc.cs" />
     <Compile Include="Shader\Tools\ShaderPerf.cs" />
     <Compile Include="Shader\Tools\XnaContentBuilder.cs" />
     <Compile Include="Textures\ColorChannels.cs" />
-    <Compile Include="Textures\TextureDocument.cs" />
-    <Compile Include="Textures\TextureGraphicsScreen.cs" />
-    <Compile Include="Textures\TextureDocumentFactory.cs" />
-    <Compile Include="Textures\TextureHelper.cs" />
-    <Compile Include="Textures\TextureDocumentView.xaml.cs">
-      <DependentUpon>TextureDocumentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Textures\TextureDocumentViewModel.cs" />
-    <Compile Include="Textures\TexturesExtension.cs" />
-    <Compile Include="Textures\TexturePresentationTarget.cs" />
-    <None Include="app.config" />
-    <None Include="Class Diagrams\Editor.Models.cd" />
-    <None Include="Class Diagrams\Editor.Shader.cd" />
-    <None Include="Class Diagrams\Editor.Textures.cd" />
-    <None Include="Class Diagrams\Editor.Game.cd" />
-    <None Include="Class Diagrams\Editor.Colors.cd" />
-    <None Include="packages.config" />
-    <Compile Include="Colors\ColorExtension.cs" />
-    <Compile Include="Colors\ColorView.xaml.cs">
-      <DependentUpon>ColorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Colors\ColorViewModel.cs" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Page Include="Colors\ColorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Colors\ResourceDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Game\Inspector\Vector2Editor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Game\Inspector\PoseEditor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Game\Inspector\Vector4Editor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Game\Inspector\Vector3Editor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Game\ResourceDictionary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Game\GameView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Models\ResourceDictionary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Models\ModelDocumentView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Properties\AssemblyInfo.template" />
-    <Page Include="Shader\Options\ShaderOptionsPageView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Shader\ResourceDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Textures\ResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Textures\TextureDocument.cs" />
+    <Compile Include="Textures\TextureDocumentFactory.cs" />
     <Page Include="Textures\TextureDocumentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Textures\TextureDocumentView.xaml.cs">
+      <DependentUpon>TextureDocumentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Textures\TextureDocumentViewModel.cs" />
+    <Compile Include="Textures\TextureGraphicsScreen.cs" />
+    <Compile Include="Textures\TextureHelper.cs" />
+    <Compile Include="Textures\TexturePresentationTarget.cs" />
+    <Compile Include="Textures\TexturesExtension.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDictionary Include="..\DigitalRune\CustomDictionary.xml">
-      <Link>CustomDictionary.xml</Link>
-    </CodeAnalysisDictionary>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\MonoGame\ThirdParty\Dependencies\assimp\Assimp64.dll">
-      <Link>Assimp64.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\MonoGame\ThirdParty\Dependencies\assimp\AssimpNet.dll">
-      <Link>AssimpNet.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="app.config" />
     <None Include="..\MonoGame\ThirdParty\Dependencies\MojoShader\Windows\libmojoshader_64.dll">
       <Link>libmojoshader_64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -442,23 +452,6 @@
       <Link>nvtt.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\MonoGame\ThirdParty\Dependencies\FreeImage.NET\Windows\FreeImage.dll">
-      <Link>FreeImage.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\MonoGame\ThirdParty\Dependencies\PVRTexLibNET\PVRTexLibNET.dll">
-      <Link>PVRTexLibNET.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\MonoGame\ThirdParty\Dependencies\PVRTexLibNET\Windows\x64\PVRTexLibWrapper.dll">
-      <Link>PVRTexLibWrapper.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

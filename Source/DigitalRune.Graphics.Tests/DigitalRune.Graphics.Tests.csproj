@@ -13,8 +13,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
+    <FileUpgradeFlags></FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
@@ -32,8 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,10 +63,6 @@
   </Target>
   -->
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -105,6 +99,36 @@
     <Reference Include="WindowsFormsIntegration">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalRune.Geometry\DigitalRune.Geometry%28PCL%29.csproj">
+      <Project>{8a8fe6d4-0906-4fc3-847c-31387dfdcb2c}</Project>
+      <Name>DigitalRune.Geometry%28PCL%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalRune.Graphics.Content.Pipeline\DigitalRune.Graphics.Content.Pipeline%28MG,Win%29.csproj">
+      <Project>{686e45de-6daf-4bf0-affc-7a51bf7d98ca}</Project>
+      <Name>DigitalRune.Graphics.Content.Pipeline%28MG,Win%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalRune.Graphics\DigitalRune.Graphics%28MG,Win%29.csproj">
+      <Project>{5926e2b5-50ad-433d-91f5-dd947f26d8fd}</Project>
+      <Name>DigitalRune.Graphics%28MG,Win%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalRune.Mathematics\DigitalRune.Mathematics%28PCL%29.csproj">
+      <Project>{a5833de3-70a9-4258-966f-77456d6c7900}</Project>
+      <Name>DigitalRune.Mathematics%28PCL%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DigitalRune\DigitalRune.csproj">
+      <Project>{5a0e3c60-1ca9-49d5-84ca-308cb8e3a3b4}</Project>
+      <Name>DigitalRune</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.Windows.csproj">
+      <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
+      <Name>MonoGame.Framework.Windows</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -137,34 +161,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SceneGraph\SceneNodeTest.cs" />
     <Compile Include="SceneGraph\SceneTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DigitalRune.Geometry\DigitalRune.Geometry%28PCL%29.csproj">
-      <Project>{8a8fe6d4-0906-4fc3-847c-31387dfdcb2c}</Project>
-      <Name>DigitalRune.Geometry%28PCL%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DigitalRune.Graphics.Content.Pipeline\DigitalRune.Graphics.Content.Pipeline%28MG,Win%29.csproj">
-      <Project>{686e45de-6daf-4bf0-affc-7a51bf7d98ca}</Project>
-      <Name>DigitalRune.Graphics.Content.Pipeline%28MG,Win%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DigitalRune.Graphics\DigitalRune.Graphics%28MG,Win%29.csproj">
-      <Project>{5926e2b5-50ad-433d-91f5-dd947f26d8fd}</Project>
-      <Name>DigitalRune.Graphics%28MG,Win%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DigitalRune.Mathematics\DigitalRune.Mathematics%28PCL%29.csproj">
-      <Project>{a5833de3-70a9-4258-966f-77456d6c7900}</Project>
-      <Name>DigitalRune.Mathematics%28PCL%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DigitalRune\DigitalRune.csproj">
-      <Project>{5a0e3c60-1ca9-49d5-84ca-308cb8e3a3b4}</Project>
-      <Name>DigitalRune</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.Windows.csproj">
-      <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
-      <Name>MonoGame.Framework.Windows</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

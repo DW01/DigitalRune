@@ -13,6 +13,13 @@ and Mono. It supports the Microsoft XNA Game Studio and MonoGame.
 - [Media](#media)
 - [License](#license)
 
+## Known issues
+- Relative mouse device (mouse centering) is currently not working in Windows Universal projects.
+- ALT key not working in Windows Universal projects.
+- Keyboard is not working in Windows Forms interop.
+- Documentation is outdated: 
+	- Unity, XNA, Windows Phone and Windows Store builds have been removed.
+	- Documentation Sandcastle project must be updated to use the MonoGame assemblies instead of the removed XNA assemblies.
 
 ## Documentation
 
@@ -73,8 +80,10 @@ Before you start, check the [Prerequisites](http://digitalrune.github.io/Digital
 MonoGame content projects are not included in the Visual Studio solutions. A few manual steps are
 required:
 
-1. Update all git submodules recursively (to load the MonoGame submodules).
+1. Update all git submodules recursively (to load the MonoGame submodules). Use a git tool like TortoiseGit and check the "Recursive" checkbox!
 1. Run `Source/MonoGame/Protobuild.exe` to generate MonoGame project files and solutions.
+1. Open the Visual Studio solution *DigitalRune-MonoGame-Windows.sln* and build the MonoGame.Framework.Windows project (Configuration: Release, Platforms: Mixed Platforms). This is required to create the MonoGame PCL (Portable Class Library) build.
+1. Run the `Build-MonoGame-Portable.cmd batch file. This creates the MonoGame PCL build from the MonoGame.Framework.Windows assembly using the Piranha tool.
 1. Build the Visual Studio solution *DigitalRune-MonoGame-\<Platform\>.sln* (Configuration: Release, Platforms: Mixed Platforms).
 A few projects will fail because the MonoGame content projects haven't been built yet.
 1. Build the DigitalRune content by running `Build-Content-Release.cmd`.
@@ -82,16 +91,6 @@ A few projects will fail because the MonoGame content projects haven't been buil
 1. Build the Visual Studio solution *DigitalRune-MonoGame-\<Platform\>.sln* again.
 Now, the projects should build successfully.
 1. Run the sample project *Samples/Samples-MonoGame-\<Platform\>.csproj*.
-
-
-### How to build the DigitalRune Engine for XNA
-
-1. Build the Visual Studio solution *DigitalRune-XNA-Windows*.
-1. Run the sample project *Samples/Samples-XNA-Windows.csproj*.
-
-To use the Microsoft XNA Game Studio with Visual Studio 2012 (or newer) follow these instructions:
-[Link](http://digitalrune.github.io/DigitalRune-Documentation/html/06ec096e-b312-4052-b0ac-056d89efb5e1.htm)
-
 
 
 ### How to build the documentation

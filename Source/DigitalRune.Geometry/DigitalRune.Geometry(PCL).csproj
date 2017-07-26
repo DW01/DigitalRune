@@ -10,10 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DigitalRune.Geometry</RootNamespace>
     <AssemblyName>DigitalRune.Geometry</AssemblyName>
-    <TargetFrameworkVersion Condition=" '$(OS)' == 'Windows_NT' ">v4.0</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition=" '$(OS)' == 'Unix' ">v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile Condition=" '$(OS)' == 'Windows_NT' ">Profile328</TargetFrameworkProfile>
-    <TargetFrameworkProfile Condition=" '$(OS)' == 'Unix' ">Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -23,10 +21,8 @@
     <Optimize>false</Optimize>
     <BaseIntermediateOutputPath>obj\.NETPortable\Debug\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">bin\.NETPortable\Debug\</OutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Unix' ">bin\.NETPortable_iOS\Debug\</OutputPath>
-    <DefineConstants Condition=" '$(OS)' == 'Windows_NT' ">TRACE;DEBUG;PORTABLE;MONOGAME;POOL_ENUMERABLES</DefineConstants>
-    <DefineConstants Condition=" '$(OS)' == 'Unix' ">TRACE;DEBUG;PORTABLE;MONOGAME;POOL_ENUMERABLES;NET45</DefineConstants>
+    <OutputPath>bin\.NETPortable\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PORTABLE;MONOGAME;POOL_ENUMERABLES</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\.NETPortable\Debug\DigitalRune.Geometry.xml</DocumentationFile>
@@ -37,10 +33,8 @@
     <Optimize>true</Optimize>
     <BaseIntermediateOutputPath>obj\.NETPortable\Release\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">bin\.NETPortable\Release\</OutputPath>
-    <OutputPath Condition=" '$(OS)' == 'Unix' ">bin\.NETPortable_iOS\Release\</OutputPath>
-    <DefineConstants Condition=" '$(OS)' == 'Windows_NT' ">TRACE;PORTABLE;MONOGAME;POOL_ENUMERABLES</DefineConstants>
-    <DefineConstants Condition=" '$(OS)' == 'Unix' ">TRACE;PORTABLE;MONOGAME;POOL_ENUMERABLES;NET45</DefineConstants>
+    <OutputPath>bin\.NETPortable\Release\</OutputPath>
+    <DefineConstants>TRACE;PORTABLE;MONOGAME;POOL_ENUMERABLES</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\.NETPortable\Release\DigitalRune.Geometry.xml</DocumentationFile>
@@ -59,6 +53,11 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\MonoGame\MonoGame.Framework\bin\Portable\AnyCPU\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DigitalRune.Mathematics\DigitalRune.Mathematics%28PCL%29.csproj">
       <Project>{A5833DE3-70A9-4258-966F-77456D6C7900}</Project>
       <Name>DigitalRune.Mathematics(PCL)</Name>
@@ -66,10 +65,6 @@
     <ProjectReference Include="..\DigitalRune\DigitalRune%28PCL%29.csproj">
       <Project>{05D82E85-901A-42CE-8D0A-DAF8B7F0168B}</Project>
       <Name>DigitalRune(PCL)</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.PCL.csproj">
-      <Project>{FFCCDE91-500E-47EF-8342-5CA5C85A67FE}</Project>
-      <Name>MonoGame.Framework.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

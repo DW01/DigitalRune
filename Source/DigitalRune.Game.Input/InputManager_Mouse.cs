@@ -4,7 +4,7 @@
 
 using System;
 using Microsoft.Xna.Framework.Input;
-
+using Microsoft.Xna.Framework.Input.Touch;
 #if USE_DIGITALRUNE_MATHEMATICS
 using DigitalRune.Mathematics.Algebra;
 #else
@@ -38,9 +38,9 @@ namespace DigitalRune.Game.Input
 
         _enableMouseCentering = value;
 
-#if MONOGAME
-        Mouse.IsRelative = value;
-#endif
+//#if MONOGAME
+//        Mouse.IsRelative = value;
+//#endif
         
         if (_enableMouseCentering)
         {
@@ -94,11 +94,11 @@ namespace DigitalRune.Game.Input
         if (!EnableMouseCentering)
           return new Vector2F(_newMouseState.X - _previousMouseState.X, _newMouseState.Y - _previousMouseState.Y);
 
-#if MONOGAME
-        return new Vector2F(_newMouseState.DeltaX, _newMouseState.DeltaY);
-#else
+//#if MONOGAME
+//        return new Vector2F(_newMouseState.DeltaX, _newMouseState.DeltaY);
+//#else
         return new Vector2F(_newMouseState.X - Settings.MouseCenter.X, _newMouseState.Y - Settings.MouseCenter.Y);
-#endif
+//#endif
       }
     }
 
@@ -128,6 +128,38 @@ namespace DigitalRune.Game.Input
       // ----- Update mouse states.
       _previousMouseState = _newMouseState;
       _newMouseState = Mouse.GetState();
+
+      // In XNA on WP7, touch also sets the mouse data. This is very useful because any code that
+      // was written for the mouse continues to work with touch.
+      if (TouchCollection.Count > 0)
+      {
+        var touchLocation = TouchCollection[TouchCollection.Count - 1];
+        if (touchLocation.State == TouchLocationState.Released)
+        {
+          _newMouseState = new MouseState(
+            _previousMouseState.Position.X,
+            _previousMouseState.Position.Y,
+            _newMouseState.ScrollWheelValue,
+            ButtonState.Released,
+            _newMouseState.MiddleButton,
+            _newMouseState.RightButton,
+            _newMouseState.XButton1,
+            _newMouseState.XButton2);
+        }
+        else
+        {
+          _newMouseState = new MouseState(
+            (int)(touchLocation.Position.X + 0.5f),
+            (int)(touchLocation.Position.Y + 0.5f),
+            _newMouseState.ScrollWheelValue,
+            ButtonState.Pressed,
+            _newMouseState.MiddleButton,
+            _newMouseState.RightButton,
+            _newMouseState.XButton1,
+            _newMouseState.XButton2);
+        }
+      }
+
       MousePosition = MousePositionRaw;
       MousePositionDelta = MousePositionDeltaRaw;
 

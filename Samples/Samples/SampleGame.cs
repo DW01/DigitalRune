@@ -103,10 +103,10 @@ namespace Samples
         PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8,
         PreferMultiSampling = false,
         SynchronizeWithVerticalRetrace = true,
-#if !WINDOWS && !WINDOWS_UWP && !XBOX
+#if WINDOWS || WINDOWS_UWP  || XBOX
         // The DigitalRune builds for Windows, Universal Windows Apps and Xbox 360 support
         // HiDef effects. The other platforms support currently only Reach.
-        GraphicsProfile = GraphicsProfile.Reach,
+        GraphicsProfile = GraphicsProfile.HiDef,
 #endif
       };
 
@@ -192,7 +192,7 @@ namespace Samples
       var assetsStorage = new ZipStorage(titleStorage, "Content.zip");
       vfsStorage.MountInfos.Add(new VfsMountInfo(assetsStorage, null));
 
-#if !ANDROID && !IOS && !LINUX && !MACOS
+#if !ANDROID && !IOS && !LINUX && !MACOS && !WINDOWS_PHONE_APP
       // --> Mount the DigitalRune assets to the root of the virtual file system.
       var drStorage = new ZipStorage(titleStorage, "DigitalRune.zip");
       vfsStorage.MountInfos.Add(new VfsMountInfo(drStorage, null));
