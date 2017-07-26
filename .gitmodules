@@ -1,4 +1,4 @@
 [submodule "Source/MonoGame"]
 	path = Source/MonoGame
-	url = https://github.com/stonstad/MonoGame-DigitalRune.git
+	url = https://github.com/Lu05/MonoGame.git
 	branch = develop
