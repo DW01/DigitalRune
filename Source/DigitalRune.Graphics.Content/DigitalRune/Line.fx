@@ -141,12 +141,12 @@ VSOutput VS(VSInput input)
   float2 endClip = endProj.xy / endProj.w;
   
   // Clip space range [-1, 1] contains ViewportSize pixels.
-  float2 pixelSizeClip = float2(2, 2) / ViewportSize;
+  float2 pixelSizeClip = float2(2, 2) / ViewportSize;   
   
   // Offset vertex to give the quad a width (including filter radius for anti-aliasing).
   float2 direction = normalize((endClip.xy - startClip.xy) / pixelSizeClip.xy);  // divide by pixel size to correct viewport aspect ratio.
   float2 normal = float2(-direction.y, direction.x) * upDownFactor;
-  output.Position.xy += (normal * (thickness / 2 + FilterRadius)) * output.Position.w * pixelSizeClip;
+  output.Position.xy += (normal * (thickness + FilterRadius)) * output.Position.w * pixelSizeClip;
   
   // TODO: Try to add "caps" for line end-points.
   // This simple code does not work - probably a problem with the near clip plane...
