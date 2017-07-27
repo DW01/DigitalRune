@@ -29,6 +29,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using SharpDX;
+using SharpDX.Mathematics.Interop;
 using SharpDX.WIC;
 
 
@@ -597,7 +598,7 @@ namespace DigitalRune.Graphics.Content
               throw new NotSupportedException("Format conversion is not supported.");
 
             converter.Initialize(source, targetGuid, GetWicDither(flags), null, 0, BitmapPaletteType.Custom);
-            frame.WriteSource(converter, new Rectangle(0, 0, image.Width, image.Height));
+            frame.WriteSource(converter, new RawBox(0, 0, image.Width, image.Height));
           }
         }
 

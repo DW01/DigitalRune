@@ -239,8 +239,6 @@ namespace DigitalRune.Graphics.Rendering
           pass.Apply();
           graphicsDevice.DrawInstancedPrimitives(
             _submesh.PrimitiveType,
-            0,
-            0,
             _submesh.VertexCount,
             _submesh.StartIndex,
             _submesh.PrimitiveCount,

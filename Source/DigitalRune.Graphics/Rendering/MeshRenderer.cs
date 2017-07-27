@@ -858,8 +858,6 @@ namespace DigitalRune.Graphics.Rendering
           graphicsDevice.Indices = indexBuffer;
           graphicsDevice.DrawIndexedPrimitives(
             submesh.PrimitiveType,
-            0,
-            0,
             submesh.VertexCount,
             submesh.StartIndex,
             submesh.PrimitiveCount);
@@ -905,8 +903,6 @@ namespace DigitalRune.Graphics.Rendering
 
         graphicsDevice.DrawInstancedPrimitives(
             submesh.PrimitiveType,
-            0,
-            0,
             submesh.VertexCount,
             submesh.StartIndex,
             submesh.PrimitiveCount,

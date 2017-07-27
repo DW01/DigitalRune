@@ -390,7 +390,7 @@ namespace DigitalRune.Graphics.Interop
 
         // Place Direct3D 11 event query.
         device11.ImmediateContext.End(_query);
-        SharpDX.Bool result;
+        SharpDX.Mathematics.Interop.RawBool result;
         _isFrameReady = device11.ImmediateContext.GetData(_query, out result) && result;
 
         if (IsSynchronized)
@@ -469,7 +469,7 @@ namespace DigitalRune.Graphics.Interop
       Debug.Assert(graphicsDevice != null);
       Debug.Assert(_query != null, "_isFrameReady should be true when uninitialized (_query == null).");
 
-      SharpDX.Bool result;
+      SharpDX.Mathematics.Interop.RawBool result;
       var device11 = (SharpDX.Direct3D11.Device)graphicsDevice.Handle;
       _isFrameReady = device11.ImmediateContext.GetData(_query, out result) && result;
       return _isFrameReady;

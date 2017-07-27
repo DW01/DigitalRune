@@ -7,6 +7,7 @@ using System;
 using System.Runtime.InteropServices;
 using SharpDX;
 using SharpDX.Direct3D9;
+using SharpDX.Mathematics.Interop;
 using DeviceType = SharpDX.Direct3D9.DeviceType;
 using PresentInterval = SharpDX.Direct3D9.PresentInterval;
 using Texture = SharpDX.Direct3D9.Texture;
@@ -238,7 +239,7 @@ namespace DigitalRune.Graphics.Interop
 
       int width = Math.Min(source.Description.Width, target.Description.Width);
       int height = Math.Min(source.Description.Height, target.Description.Height);
-      var rectangle = new Rectangle(0, 0, width, height);
+      var rectangle = new RawRectangle(0, 0, width, height);
       _device.StretchRectangle(source, rectangle, target, rectangle, TextureFilter.None);
     }
 

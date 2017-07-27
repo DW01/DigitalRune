@@ -56,18 +56,18 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SharpDX">
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.DXGI, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.DXGI.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.DXGI.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Direct3D11, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.Direct3D11.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.Direct3D11.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Direct3D9">
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Windows\SharpDX.Direct3D9.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.Direct3D9.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
