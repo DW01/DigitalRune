@@ -42,7 +42,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="9508e261-5ac5-4eb7-97f9-bc4ff6717708" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="9508e261-5ac5-4eb7-97f9-bc4ff6717708" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -56,18 +56,16 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SharpDX">
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.dll</HintPath>
     </Reference>
-    <Reference Include="SharpDX.DXGI, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.DXGI.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Direct3D11, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.Direct3D11.dll</HintPath>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct3D11.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.Direct3D9">
-      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\Desktop\SharpDX.Direct3D9.dll</HintPath>
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\MonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.DXGI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
