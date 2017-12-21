@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics.Rendering
   /// <see cref="Submit"/> to update instances. The method <see cref="Submit"/> returns the indices
   /// where the new data can be added. If the batch is full, the 
   /// <see cref="InstanceRenderBatch{T}"/> will automatically call
-  /// <see cref="GraphicsDevice.DrawInstancedPrimitives"/> to draw the batch. <see cref="Flush"/>
+  /// <see cref="GraphicsDevice.DrawIndexedPrimitives(PrimitiveType,int,int,int)"/> to draw the batch. <see cref="Flush"/>
   /// can be called to force a drawing of the current batch.
   /// </para>
   /// </remarks>

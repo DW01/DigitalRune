@@ -559,7 +559,7 @@ namespace DigitalRune.Physics.Tests
     [Test]
     public void EmptyShape()
     {
-      var s = new EmptyShape();
+      var s = Shape.Empty;
       float m0;
       Vector3F com0;
       Matrix33F i0;
@@ -574,7 +574,7 @@ namespace DigitalRune.Physics.Tests
     [Test]
     public void InfiniteShape()
     {
-      var s = new InfiniteShape();
+      var s = Shape.Infinite;
       float m0;
       Vector3F com0;
       Matrix33F i0;

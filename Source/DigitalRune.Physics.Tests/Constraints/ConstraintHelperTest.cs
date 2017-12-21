@@ -27,13 +27,15 @@ namespace DigitalRune.Physics.Constraints.Tests
     [Test]
     public void ComputeKMatrix()
     {
-      var b = new RigidBody(new EmptyShape());
-
-      b.MassFrame = new MassFrame()
+      var b = new RigidBody(Shape.Empty)
       {
-        Mass = 3,
-        Inertia = new Vector3F(0.4f, 0.5f, 0.6f),
+        MassFrame = new MassFrame()
+        {
+          Mass = 3,
+          Inertia = new Vector3F(0.4f, 0.5f, 0.6f),
+        }
       };
+
 
       var r = new Vector3F(1, 2, 3);
       var k = ConstraintHelper.ComputeKMatrix(b, r);

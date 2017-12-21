@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Rendering
   /// index buffer. The caller can call <see cref="Submit"/> to update vertices and indices. The
   /// method <see cref="Submit"/> return the indices where the new data can be added. If the batch
   /// is full, the <see cref="RenderBatch{TVertex,TIndex}"/> will automatically call
-  /// <see cref="GraphicsDevice.DrawIndexedPrimitives"/> to draw the batch. <see cref="Flush"/> can
+  /// <see cref="GraphicsDevice.DrawIndexedPrimitives(PrimitiveType,int,int,int)"/> to draw the batch. <see cref="Flush"/> can
   /// be called to force a drawing of the current batch.
   /// </para>
   /// </remarks>

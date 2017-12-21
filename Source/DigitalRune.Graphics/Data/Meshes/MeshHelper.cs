@@ -159,7 +159,7 @@ namespace DigitalRune.Graphics
     /// <remarks>
     /// This method sets the <see cref="VertexDeclaration"/>, <see cref="Submesh.VertexBuffer"/>,
     /// and <see cref="Submesh.IndexBuffer"/> of the submesh and calls
-    /// <see cref="GraphicsDevice.DrawIndexedPrimitives"/>. Effects are not handled in this method.
+    /// <see cref="GraphicsDevice.DrawIndexedPrimitives(PrimitiveType,int,int,int)"/>. Effects are not handled in this method.
     /// The method assumes that the correct shader effect is already active.
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
